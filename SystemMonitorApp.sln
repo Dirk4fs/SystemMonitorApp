@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36127.28 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemMonitorApp", "SystemMonitorApp.csproj", "{93C74715-9B14-4F78-AC9D-68EE0E2954A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93C74715-9B14-4F78-AC9D-68EE0E2954A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93C74715-9B14-4F78-AC9D-68EE0E2954A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93C74715-9B14-4F78-AC9D-68EE0E2954A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93C74715-9B14-4F78-AC9D-68EE0E2954A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EB2FBC22-C1C7-4F61-8F6F-335DE5957D23}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="SystemMonitorApp.Controls.VerticalGauge"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="70"
+             Width="70"
+             x:Name="ThisGauge">
+
+    <Border BorderBrush="#555" BorderThickness="1" Padding="5" Background="#1A1A1A">
+        <Border.CornerRadius>
+            <CornerRadius>8</CornerRadius>
+        </Border.CornerRadius>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Title Section -->
+            <TextBlock Grid.Row="0" 
+                       Text="{Binding GaugeTitle, ElementName=ThisGauge}" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"
+                       Margin="0,0,0,5"
+                       FontSize="12" 
+                       FontWeight="SemiBold" 
+                       Foreground="White" 
+                       TextWrapping="Wrap" 
+                       TextAlignment="Center"
+                       MaxWidth="60"/>
+
+            <!-- Gauge Body -->
+            <Grid Grid.Row="1" Margin="5,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Value Markers Canvas -->
+                <Canvas Grid.Column="0" x:Name="TickCanvas" Width="20" Margin="0,0,5,0"/>
+
+                <!-- Gauge Track -->
+                <Border Grid.Column="1" BorderBrush="#333" BorderThickness="1">
+                    <Border.CornerRadius>
+                        <CornerRadius>5</CornerRadius>
+                    </Border.CornerRadius>
+                    <Grid x:Name="GaugeTrack" ClipToBounds="True">
+                        <!-- Background -->
+                        <Rectangle Fill="#111" RadiusX="4" RadiusY="4"/>
+
+                        <!-- Animated Fill Bar -->
+                        <Rectangle x:Name="FillBar" 
+                                  VerticalAlignment="Bottom"
+                                  RadiusX="4" 
+                                  RadiusY="4">
+                            <Rectangle.Fill>
+                                <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
+                                    <GradientStop Color="Blue" Offset="0.0"/>
+                                    <GradientStop Color="Green" Offset="0.5"/>
+                                    <GradientStop Color="Yellow" Offset="0.75"/>
+                                    <GradientStop Color="Red" Offset="1.0"/>
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                    </Grid>
+                </Border>
+            </Grid>
+
+            <!-- Value Display -->
+            <TextBlock Grid.Row="2" 
+                       Text="{Binding FormattedValue, ElementName=ThisGauge}" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"
+                       Margin="0,5,0,0"
+                       FontSize="16" 
+                       FontWeight="Bold" 
+                       Foreground="White"/>
+        </Grid>
+    </Border>
+</UserControl>
