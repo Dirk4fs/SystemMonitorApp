@@ -1,11 +1,15 @@
-# Navigate to project
-cd /c/Projects/SystemMonitorApp
+.vs/
+bin/
+obj/
+*.user
 
-# Stage the updated .gitignore
-git add .gitignore
+# Visual Studio files
+*.suo
+*.userosscache
+*.sln.docstates
 
-# Commit the change
-git commit -m "Improve .gitignore with VS and build exclusions"
-
-# Push to GitHub
-git push origin main
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+*.log
